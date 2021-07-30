@@ -41,6 +41,11 @@ case class AppConfig @Inject() (
       .getOptional[Boolean]("features.show-draft-statements")
       .getOrElse(false)
 
+  val showArchivedStatementsEnabled: Boolean =
+    config
+      .getOptional[Boolean]("features.show-archived-statements")
+      .getOrElse(false)
+
   val en: String            = "en"
   val cy: String            = "cy"
   val defaultLanguage: Lang = Lang(en)
